@@ -3,6 +3,7 @@ beautifulsoup4
 streamlit
 numpy
 Pillow
+streamlit-drawable-canvas
 keras~=2.8.0
 tensorflow~=2.8.0
 scikit-learn==1.0.2
