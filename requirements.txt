@@ -4,6 +4,7 @@ streamlit
 numpy
 Pillow
 streamlit-drawable-canvas
+opencv-python==4.6.0.66
 keras~=2.8.0
 tensorflow~=2.8.0
 scikit-learn==1.0.2
