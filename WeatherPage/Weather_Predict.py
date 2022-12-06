@@ -19,7 +19,7 @@ def Weather():
     ct.display_header_section("🌐 Nhập tên thành phố và hệ nhiệt độ . Ứng dụng sẽ cho bạn biết thời tiết của 6 ngày tính từ ngày hôm nay", underline=False)
     place = st.text_input("TÊN THÀNH PHỐ (KHÔNG DẤU VÀ THEO CHUẨN QUỐC TẾ, VD: Ha Noi) 🌆 ", "Ha Noi")
     unit = st.selectbox(" CHỌN HỆ NHIỆT ĐỘ 🌡 ", ("Độ C", "Độ F"))
-    button = st.button("Dự đoán thời tiết")
+    button = st.button("Dự đoán thời tiết", type="primary")
 
     # To deceive error of pyplot global warning
 
@@ -139,21 +139,21 @@ def Weather():
         # Expected Temperature Alerts
         ct.display_header_section("❄️Dự đoán trạng thái thời tiết và nhiệt độ: ")
         if forecaster.will_have_fog():
-            st.write("### ▶️Khả năng cao xuất hiện sương mù🌁")
+            st.write("### Khả năng cao xuất hiện sương mù🌁")
         if forecaster.will_have_rain():
-            st.write("### ▶️Khả năng cao xuất hiện mưa☔")
+            st.write("### Khả năng cao xuất hiện mưa☔")
         if forecaster.will_have_storm():
-            st.write("### ▶️Khả năng cao xuất hiện giông⛈️")
+            st.write("### Khả năng cao xuất hiện giông⛈️")
         if forecaster.will_have_snow():
-            st.write("### ▶️Khả năng cao sẽ có tuyết❄️")
+            st.write("### Khả năng cao sẽ có tuyết❄️")
         if forecaster.will_have_tornado():
-            st.write("### ▶️Khả năng cao có vòi rồng🌪️")
+            st.write("### Khả năng cao có vòi rồng🌪️")
         if forecaster.will_have_hurricane():
-            st.write("### ▶️Khả năng cao có bão🌀")
+            st.write("### Khả năng cao có bão🌀")
         if forecaster.will_have_clear():
-            st.write("### ▶️Trời đẹp🌞!!")
+            st.write("### Trời đẹp🌞!!")
         if forecaster.will_have_clouds():
-            st.write("### ▶️Trời nhiều mây⛅")
+            st.write("### Trời nhiều mây⛅")
 
         st.write('                ')
         st.write('                ')

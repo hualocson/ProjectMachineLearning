@@ -7,17 +7,10 @@
 	--section-header-size: 24px;
 	--text-size: 20px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-p {
-	color: var(--text-color);
-}
+body,
 .stApp.streamlit-wide.css-ffhzg2.eczokvf1,
 .stApp.css-fg4pbf.eczokvf1 {
-	background: var(--background-color);
+	background-color: var(--background-color);
 }
 .css-9s5bis.edgvbvh3,
 .css-fg4pbf {
@@ -35,7 +28,8 @@ a.css-eczf16.e16nr0p32 {
 }
 .css-1avcm0n.e8zbici2,
 .css-18ni7ap.e8zbici2,
-#MainMenu {
+#MainMenu,
+footer {
 	/* visibility: hidden; */
 }
 .css-81oif8.effi0qh3 {
@@ -52,7 +46,12 @@ button.css-1x8cf1d.edgvbvh10 {
 	outline: none;
 	border: none;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
 .text-color {
 	color: var(--text-color);
 }
@@ -126,9 +125,15 @@ button.css-1x8cf1d.edgvbvh10 {
 }
 .cover-photo {
 	background: url(https://images.unsplash.com/photo-1540228232483-1b64a7024923?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80);
+	background: url(https://cdn.pixabay.com/photo/2017/07/31/22/05/feathers-2561511_1280.jpg);
+	background: url(https://img.freepik.com/free-vector/pixel-art-vacation-background_52683-86708.jpg?w=1800&t=st=1670344523~exp=1670345123~hmac=82a3357dfd286293e1b1dc790c5e7f9f12b690b930824e8a56792186515d9a5c);
+	background: url(https://img.freepik.com/free-vector/pixel-art-mystical-background_52683-87349.jpg?w=1800&t=st=1670344653~exp=1670345253~hmac=5b3051f180dd7c85f02460a0ff021a08b12e763a1884ea7f37cc6cad37e4be5d);
 	height: 160px;
 	width: 100%;
 	border-radius: 5px 5px 0 0;
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
 }
 .profile {
 	height: 120px;
@@ -164,3 +169,19 @@ button.css-1x8cf1d.edgvbvh10 {
 .card-profile i:hover {
 	color: var(--primary-color);
 }
+
+/* display Img */
+.container-image {
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 300px);
+	gap: 30px;
+	overflow: hidden;
+}
+.container-image img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+/* end display img */

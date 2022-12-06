@@ -11,6 +11,10 @@ def run():
   import numpy as np
   import cv2
   from PIL import Image
+  import custom_css as ct
+
+  ct.display_header_page("✍🏻Nhận diện chữ viết tay")
+
   stroke_width = st.sidebar.slider("Stroke width: ", 1, 25, 25)
   stroke_color = st.sidebar.color_picker("Stroke color hex: ", "#EFD4D6")
   realtime_update = st.sidebar.checkbox("Update in realtime", True)

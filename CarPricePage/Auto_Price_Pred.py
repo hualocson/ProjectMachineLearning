@@ -3,13 +3,28 @@ def AutoPrice():
     import pandas as pd
     import numpy as np
     import pickle
+    import custom_css as ct
+    import requests
+    from bs4 import BeautifulSoup
 
-    html_temp = """
-    <div style="background-color:gray;padding:1.5px">
-    <h1 style="color:white;text-align:center;">Dự Đoán Giá Xe Đã Qua Sử Dụng</h1>
-    </div><br>"""
-    st.markdown(html_temp, unsafe_allow_html=True)
-    st.write("\n\n"*2)
+    def fetch_car_image(car_model):
+        try:
+            url = f"https://unsplash.com/s/photos/{car_model} car"
+            req = requests.get(url).text
+            scrap = BeautifulSoup(req, 'html.parser')
+            elements = scrap.select("img.YVj9w[srcset]")[:4]
+            links = []
+            for e in elements:
+                link = e.attrs['srcset'][:e.attrs['srcset'].find("?")]
+                links.append(link)
+            ct.display_image(links)
+            # calories = scrap.find("div", class_="BNeawe iBp4i AP7Wnd").text
+            # return calories
+        except Exception as e:
+            st.error("Can't able to fetch the Calories")
+            print(e)
+
+    ct.display_header_page("🚘 Dự Đoán Giá Xe Đã Qua Sử Dụng")
 
     filename = './CarPricePage/Auto_Price_Pred_Model'
     model = pickle.load(open(filename, 'rb'))
@@ -48,6 +63,10 @@ def AutoPrice():
         col2.info(pred[0].astype(int))
         col1.info("The estimated value of car price is VND")
         col2.info(pred[0].astype(int)*25000)
+
+        car_model = df['make_model'].values[0]
+        st.write(car_model)
+        fetch_car_image(car_model)
 
     if st.button("Chart"):
         arr = []

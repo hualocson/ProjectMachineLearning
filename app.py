@@ -29,9 +29,9 @@ def ourteam_section():
     ct.display_header_section("Our Team")
     return f"""
         <div class="container">
-            {card_profile("https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", "Hua Loc Son", "20110712", "Triển khai bài nhận diện trái cây và chữ viết tay")}
-            {card_profile("https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", "Nguyen Minh Chien", "20110712", "Triển khai bài dự đoán giá xe cũ")}
-            {card_profile("https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", "Nguyen Hung Khang", "20110712", "Triển khai bài dự báo thời tiết")}
+            {card_profile("https://cdn.pixabay.com/photo/2022/02/20/13/57/avatar-7024608_1280.png", "Hua Loc Son", "20110712", "Triển khai bài nhận diện trái cây và chữ viết tay")}
+            {card_profile("https://cdn.pixabay.com/photo/2022/02/20/14/01/avatar-7024621__480.png", "Nguyen Minh Chien", "20110712", "Triển khai bài dự đoán giá xe cũ")}
+            {card_profile("https://cdn.pixabay.com/photo/2022/02/20/13/59/avatar-7024613__480.png", "Nguyen Hung Khang", "20110712", "Triển khai bài dự báo thời tiết")}
         </div>
     """
 
@@ -57,16 +57,6 @@ def card_profile(link_img, name, mssv, desc=None):
 ct.add_css()
 
 def Welcome():
-#     theme = """
-# [theme]
-# base = "light"
-# primaryColor="#f0abff"
-#     """
-#     userprofile = os.environ['USERPROFILE']
-#     if os.path.isdir(f"{userprofile}/.streamlit"):
-#         path = f"{userprofile}/.streamlit/config.toml"
-#         with open(path, "w") as f:
-#             f.write(theme)
     ct.display_header_page("Project Machine Learning")
     st.markdown(about_section(), unsafe_allow_html=True)
     st.markdown(ourteam_section(), unsafe_allow_html=True)

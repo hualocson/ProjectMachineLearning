@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.components.v1 import html
 
 def add_css():
   link_faw = """
@@ -10,6 +11,17 @@ def add_css():
 
 def display_header_page(para):
   st.markdown(f"<h2 class='center-header header-page'>{para}</h2>", unsafe_allow_html=True)
+
+def display_image(links):
+  html_text = f"""
+  <div class="container-image">
+    <img src="{links[0]}"/>
+    <img src="{links[1]}"/>
+    <img src="{links[2]}"/>
+    <img src="{links[3]}"/>
+  </div>
+  """
+  st.markdown(html_text, unsafe_allow_html=True)
 
 def display_header_section(para, underline=True):
   if underline:
