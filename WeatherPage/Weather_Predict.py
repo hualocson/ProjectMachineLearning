@@ -8,17 +8,15 @@ def Weather():
     from pyowm.commons.exceptions import NotFoundError
     import pyowm
     from pyowm.utils.config import get_default_config
+    import custom_css as ct
 
     # Streamlit Display
     # st.set_page_config(layout="centered")
-    st.title(" 📅 DỰ BÁO THỜI TIẾT 🌥️ ☔ ")
+    ct.display_header_page("📅 DỰ BÁO THỜI TIẾT 🌥️ ☔ ")
 
     col1, mid, col2 = st.columns([80, 5, 140])
 
-    st.write('## 📌 ️NHÓM')
-
-
-    st.header("🌐 Nhập tên thành phố và hệ nhiệt độ . Ứng dụng sẽ cho bạn biết thời tiết của 6 ngày tính từ ngày hôm nay")
+    ct.display_header_section("🌐 Nhập tên thành phố và hệ nhiệt độ . Ứng dụng sẽ cho bạn biết thời tiết của 6 ngày tính từ ngày hôm nay", underline=False)
     place = st.text_input("TÊN THÀNH PHỐ (KHÔNG DẤU VÀ THEO CHUẨN QUỐC TẾ, VD: Ha Noi) 🌆 ", "Ha Noi")
     unit = st.selectbox(" CHỌN HỆ NHIỆT ĐỘ 🌡 ", ("Độ C", "Độ F"))
     button = st.button("Dự đoán thời tiết")
@@ -127,7 +125,8 @@ def Weather():
 
         obs = mgr.weather_at_place(place)
         weather = obs.weather
-        st.title(f"📍 Thời tiết tại {place[0].upper() + place[1:]} hiện giờ: ")
+        ct.display_header_section(f"📍 Thời tiết tại {place[0].upper() + place[1:]} hiện giờ: ")
+        # st.title()
         if unit_c == 'celsius':
             st.write(f"## 🌡️ Nhiệt độ: {temperature} °C")
         else:
@@ -138,7 +137,7 @@ def Weather():
         st.write(f"### ☁️ Mặt trời lặng :      {weather.sunset_time(timeformat='iso')} GMT")
 
         # Expected Temperature Alerts
-        st.title("❄️Dự đoán trạng thái hời tiết và nhiệt độ: ")
+        ct.display_header_section("❄️Dự đoán trạng thái thời tiết và nhiệt độ: ")
         if forecaster.will_have_fog():
             st.write("### ▶️Khả năng cao xuất hiện sương mù🌁")
         if forecaster.will_have_rain():

@@ -16,7 +16,6 @@ def run():
   realtime_update = st.sidebar.checkbox("Update in realtime", True)
 
   container_large = st.container()
-  col1x, col2x = container_large.columns(2)
 
   # Create a canvas component
   with container_large:
