@@ -15,6 +15,7 @@ h5,
 p {
 	color: var(--text-color);
 }
+.stApp.streamlit-wide.css-ffhzg2.eczokvf1,
 .stApp.css-fg4pbf.eczokvf1 {
 	background: var(--background-color);
 }
@@ -32,13 +33,17 @@ p {
 a.css-eczf16.e16nr0p32 {
 	display: none;
 }
+.css-1avcm0n.e8zbici2,
 .css-18ni7ap.e8zbici2,
 #MainMenu {
-	visibility: hidden;
+	/* visibility: hidden; */
 }
 .css-81oif8.effi0qh3 {
 	color: var(--text-color);
 }
+
+button.css-5uatcg.edgvbvh10:focus,
+button.css-5uatcg.edgvbvh10,
 button.css-1x8cf1d.edgvbvh10:focus,
 button.css-1x8cf1d.edgvbvh10 {
 	background: var(--primary-color);

@@ -4,6 +4,7 @@ import WeatherPage.Weather_Predict as p2
 import FruitPage.Fruits_Vegetable_Classification as p3
 import HandWritingPage.HandWriting as p4
 import custom_css as ct
+import os
 
 st.set_page_config(
     page_title="Machine Learning Project",
@@ -56,6 +57,16 @@ def card_profile(link_img, name, mssv, desc=None):
 ct.add_css()
 
 def Welcome():
+#     theme = """
+# [theme]
+# base = "light"
+# primaryColor="#f0abff"
+#     """
+#     userprofile = os.environ['USERPROFILE']
+#     if os.path.isdir(f"{userprofile}/.streamlit"):
+#         path = f"{userprofile}/.streamlit/config.toml"
+#         with open(path, "w") as f:
+#             f.write(theme)
     ct.display_header_page("Project Machine Learning")
     st.markdown(about_section(), unsafe_allow_html=True)
     st.markdown(ourteam_section(), unsafe_allow_html=True)
